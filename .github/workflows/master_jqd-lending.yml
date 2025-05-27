@@ -63,4 +63,4 @@ jobs:
         with:
           app-name: 'jqd-lending'
           package: ./release.zip
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ECB6419EF8984001A7A9479CE8D87D94 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
