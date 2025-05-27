@@ -33,7 +33,7 @@ jobs:
         run: npm run build --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip -r release.zip ./dist/lending-app-frontend
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -63,5 +63,5 @@ jobs:
         with:
           app-name: 'jqd-lending'
           slot-name: 'production'
-          package: .
+          package: ./release.zip
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ECB6419EF8984001A7A9479CE8D87D94 }}
