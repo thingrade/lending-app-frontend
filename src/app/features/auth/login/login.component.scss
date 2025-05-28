@@ -1,9 +1,11 @@
 .login-container {
-  max-width: 400px;
-  margin: 50px auto;
+  max-width: 500px;
+  width: 100%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background: white; /* optional for visual clarity */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* optional for nice look */
 }
 
 label {
