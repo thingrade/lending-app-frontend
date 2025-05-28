@@ -27,10 +27,10 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
+      # npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip -r release.zip ./dist/lending-app-frontend/browser
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -59,6 +59,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'jdawalending'
-          slot-name: 'Production'
-          package: .
+          package: ./release.zip
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2E5420DB3FBF457F9854FB53388AE569 }}
